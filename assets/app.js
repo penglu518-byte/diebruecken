@@ -24,16 +24,6 @@
   function d(s) { var p = s.split("-"); return new Date(+p[0], +p[1] - 1, +p[2]); }
   function each(arr, fn) { return (arr || []).map(fn).join(""); }
 
-  function phaseIndex(items) {
-    for (var i = 0; i < items.length; i++) {
-      if (today >= d(items[i].start) && today <= d(items[i].end)) return i;
-    }
-    return -1;
-  }
-  function nextIndex(items) {
-    for (var i = 0; i < items.length; i++) if (today < d(items[i].start)) return i;
-    return -1;
-  }
 
   var bridgeSvg =
     '<svg class="bridge" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">' +
@@ -54,7 +44,7 @@
   // ---------- sections ----------
   function header() {
     var n = C.ui.nav;
-    var links = ["status", "about", "pillars", "timeline", "highlights", "organizers", "changelog"];
+    var links = ["about", "pillars", "highlights", "programme", "organizers"];
     return (
       '<header class="topbar"><div class="wrap topbar-in">' +
       '<a class="logo" href="#top"><span class="logo-de">DIE BRÜCKEN</span><span class="logo-sep">/</span><span class="logo-cn">桥</span></a>' +
@@ -66,20 +56,9 @@
     );
   }
 
-  function draftBar() {
-    return (
-      '<div class="draftbar"><div class="wrap draftbar-in">' +
-      '<span class="pill">' + C.doc.stage + " · " + C.doc.version + "</span>" +
-      '<span class="draft-note">' + C.doc.notice + "</span>" +
-      '<span class="draft-date">' + C.ui.updatedLabel + ": <b>" + C.doc.updated + "</b></span>" +
-      "</div></div>"
-    );
-  }
-
   function hero() {
     var h = C.hero;
-    var open = d("2027-06-30");
-    var days = Math.round((open - today) / 86400000);
+    var days = Math.round((d("2027-06-30") - today) / 86400000);
     var countdown = days > 0
       ? '<div class="countdown"><span class="cd-label">' + C.ui.countdown.replace("{n}", '<b class="cd-num">' + days + "</b>") + "</span></div>"
       : "";
@@ -98,47 +77,17 @@
     );
   }
 
-  function status() {
-    var s = C.status, t = C.timeline.items;
-    var cur = phaseIndex(t), nxt = nextIndex(t);
-    var phase =
-      '<div class="phase">' +
-      '<div class="phase-now"><span class="phase-k">' + C.ui.nowLabel + '</span><span class="phase-v">' +
-      (cur >= 0 ? t[cur].title : C.ui.beforeStart) + "</span>" +
-      (cur >= 0 ? '<span class="phase-w">' + t[cur].when + "</span>" : "") + "</div>" +
-      (nxt >= 0 ? '<div class="phase-next"><span class="phase-k">' + C.ui.nextLabel + '</span><span class="phase-v">' + t[nxt].title + '</span><span class="phase-w">' + t[nxt].when + "</span></div>" : "") +
-      "</div>";
-    return (
-      '<section class="section" id="status"><div class="wrap">' +
-      sectionHead(s.title, s.intro) + phase +
-      '<ul class="tasks">' +
-      each(s.items, function (it) {
-        return (
-          '<li class="task">' +
-          '<span class="state state-' + it.state + '">' + C.ui.stateLabels[it.state] + "</span>" +
-          '<div class="task-body"><p class="task-title">' + it.title +
-          (it.placeholder ? ' <span class="ph">' + C.ui.placeholder + "</span>" : "") + "</p>" +
-          (it.note ? '<p class="task-note">' + it.note + "</p>" : "") + "</div>" +
-          '<span class="task-owner"><small>' + C.ui.ownerLabel + "</small>" + it.owner + "</span>" +
-          "</li>"
-        );
-      }) +
-      "</ul></div></section>"
-    );
-  }
-
   function about() {
-    var b = C.background, p = C.positioning;
+    var A = C.about;
     return (
-      '<section class="section alt" id="about"><div class="wrap">' +
-      sectionHead(b.title) +
-      '<div class="about-grid"><div class="prose">' + each(b.paragraphs, function (x) { return "<p>" + x + "</p>"; }) + "</div>" +
-      '<blockquote class="quote">' + b.quote + "</blockquote></div>" +
-      '<h3 class="sub-title">' + p.title + "</h3>" +
-      '<dl class="names">' + each(p.names, function (x) { return "<div><dt>" + x.label + "</dt><dd>" + x.value + "</dd></div>"; }) + "</dl>" +
-      '<p class="lead-text">' + p.text + "</p>" +
-      '<div class="format">' + each(p.format, function (x, i) { return '<div class="format-step"><span>0' + (i + 1) + "</span>" + x + "</div>"; }) + "</div>" +
-      '<p class="muted-text">' + p.formatText + "</p>" +
+      '<section class="section" id="about"><div class="wrap">' +
+      sectionHead(A.title) +
+      '<div class="about-grid"><div class="prose">' + each(A.paragraphs, function (x) { return "<p>" + x + "</p>"; }) + "</div>" +
+      '<blockquote class="quote">' + A.quote + "</blockquote></div>" +
+      '<p class="lead-text">' + A.positioning + "</p>" +
+      '<div class="format">' + each(A.format, function (x, i) {
+        return '<div class="format-step"><span>0' + (i + 1) + "</span>" + x.title + "<small>" + x.text + "</small></div>";
+      }) + "</div>" +
       "</div></section>"
     );
   }
@@ -146,9 +95,9 @@
   function pillars() {
     var P = C.pillars;
     return (
-      '<section class="section" id="pillars"><div class="wrap">' + sectionHead(P.title) +
+      '<section class="section alt" id="pillars"><div class="wrap">' + sectionHead(P.title) +
       '<div class="pillars">' +
-      each(P.items, function (it, i) {
+      each(P.items, function (it) {
         return (
           '<article class="pillar' + (it.areas ? " pillar-wide" : "") + '">' +
           '<div class="pillar-head"><span class="pillar-no">' + it.no + "</span><div><h3>" + it.name + '</h3><p class="pillar-sub">' + it.sub + "</p></div></div>" +
@@ -161,30 +110,6 @@
     );
   }
 
-  function timeline() {
-    var T = C.timeline.items, cur = phaseIndex(T), nxt = nextIndex(T);
-    return (
-      '<section class="section alt" id="timeline"><div class="wrap">' + sectionHead(C.timeline.title) +
-      '<ol class="tl">' +
-      each(T, function (it, i) {
-        var cls = "tl-item";
-        if (d(it.end) < today) cls += " past";
-        if (i === cur) cls += " current";
-        if (cur < 0 && i === nxt) cls += " upcoming";
-        if (it.milestone) cls += " milestone";
-        return (
-          '<li class="' + cls + '"><span class="tl-dot"></span>' +
-          '<div class="tl-when">' + it.when + "</div>" +
-          '<div class="tl-body"><h3>' + it.title +
-          (i === cur ? ' <span class="now-tag">' + C.ui.nowLabel + "</span>" : "") +
-          (cur < 0 && i === nxt ? ' <span class="now-tag next">' + C.ui.nextLabel + "</span>" : "") +
-          "</h3><p>" + it.desc + "</p></div></li>"
-        );
-      }) +
-      "</ol></div></section>"
-    );
-  }
-
   function highlights() {
     var H = C.highlights;
     return (
@@ -194,7 +119,8 @@
         return (
           '<article class="hl-card"><span class="hl-idx">' + (i + 1) + "</span>" +
           '<p class="hl-tag">' + it.tag + "</p><h3>" + it.title + '</h3><p class="hl-lead">' + it.lead + "</p>" +
-          '<details><summary></summary>' + each(it.body, function (x) { return "<p>" + x + "</p>"; }) + "</details>" +
+          '<details><summary data-more="' + C.ui.more + '" data-less="' + C.ui.less + '"></summary>' +
+          each(it.body, function (x) { return "<p>" + x + "</p>"; }) + "</details>" +
           "</article>"
         );
       }) +
@@ -202,10 +128,30 @@
     );
   }
 
+  function programme() {
+    var T = C.programme.items;
+    return (
+      '<section class="section" id="programme"><div class="wrap">' + sectionHead(C.programme.title) +
+      '<ol class="tl">' +
+      each(T, function (it) {
+        var cls = "tl-item";
+        if (d(it.end) < today) cls += " past";
+        if (today >= d(it.start) && today <= d(it.end)) cls += " current";
+        if (it.milestone) cls += " milestone";
+        return (
+          '<li class="' + cls + '"><span class="tl-dot"></span>' +
+          '<div class="tl-when">' + it.when + "</div>" +
+          '<div class="tl-body"><h3>' + it.title + "</h3><p>" + it.desc + "</p></div></li>"
+        );
+      }) +
+      "</ol></div></section>"
+    );
+  }
+
   function vision() {
     var V = C.vision;
     return (
-      '<section class="section vision"><div class="wrap narrow">' +
+      '<section class="section vision alt"><div class="wrap narrow">' +
       '<p class="eyebrow">' + V.title + "</p>" +
       '<p class="vision-text">' + V.text + "</p>" +
       '<div class="vision-lines">' + each(V.lines, function (x) { return "<p>" + x + "</p>"; }) + "</div>" +
@@ -216,7 +162,7 @@
   function organizers() {
     var O = C.organizers;
     return (
-      '<section class="section alt" id="organizers"><div class="wrap">' + sectionHead(O.title) +
+      '<section class="section" id="organizers"><div class="wrap">' + sectionHead(O.title) +
       '<div class="orgs">' +
       each(O.groups, function (g) {
         return '<div class="org"><p class="org-label">' + g.label + "</p>" + each(g.names, function (n) { return '<p class="org-name">' + n + "</p>"; }) + "</div>";
@@ -225,22 +171,12 @@
     );
   }
 
-  function changelog() {
-    var L = C.changelog;
-    return (
-      '<section class="section" id="changelog"><div class="wrap">' + sectionHead(L.title, L.intro) +
-      '<ul class="log">' + each(L.items, function (x) { return '<li><time>' + x.date + "</time><span>" + x.text + "</span></li>"; }) + "</ul>" +
-      "</div></section>"
-    );
-  }
-
   function footer() {
     return (
       '<footer class="footer"><div class="wrap footer-in">' +
       '<div><p class="logo"><span class="logo-de">DIE BRÜCKEN</span><span class="logo-sep">/</span><span class="logo-cn">桥</span></p>' +
-      "<p>" + C.footer.org + "</p><p class=\"muted\">" + C.footer.contact + "</p></div>" +
-      '<div class="footer-meta"><p>' + C.ui.versionLabel + ": " + C.doc.stage + " " + C.doc.version + "</p><p>" + C.ui.updatedLabel + ": " + C.doc.updated + "</p>" +
-      '<p><a href="?lang=zh">中文</a> · <a href="?lang=de">Deutsch</a></p></div>' +
+      "<p>" + C.footer.org + '</p><p class="muted">' + C.footer.line + "</p></div>" +
+      '<div class="footer-meta"><p><a href="?lang=zh">中文</a> · <a href="?lang=de">Deutsch</a></p></div>' +
       "</div></footer>"
     );
   }
@@ -257,7 +193,7 @@
   if (md) md.setAttribute("content", C.meta.description);
 
   document.getElementById("app").innerHTML =
-    header() + draftBar() + "<main>" + hero() + status() + about() + pillars() + timeline() + highlights() + vision() + organizers() + changelog() + "</main>" + footer();
+    header() + "<main>" + hero() + about() + pillars() + highlights() + programme() + vision() + organizers() + "</main>" + footer();
 
   document.getElementById("nav").addEventListener("click", function (e) {
     if (e.target.tagName === "A") document.body.classList.remove("nav-open");
