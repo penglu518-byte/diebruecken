@@ -26,8 +26,29 @@
 
 
   var bridgeSvg = (function () {
-    // arc: quadratic from (0,220) via (600,-40) to (1200,220); split at the middle into two halves
-    // so each half grows from its own shore and they meet at the keystone (600,90)
+    // arc: quadratic from (0,220) via (600,-40) to (1200,220), split at the keystone (600,90).
+    // Each half is revealed by a growing clip rect (SMIL), so the finished arc is a plain solid
+    // stroke in every browser; the travelling light is a gradient band sliding along x.
+    var still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function anim(attr, values, begin, dur, extra) {
+      if (still) return "";
+      return '<animate attributeName="' + attr + '" values="' + values + '" begin="' + begin + 's" dur="' + dur + 's"' + (extra || ' fill="freeze" calcMode="spline" keySplines=".45 0 .2 1"') + "/>";
+    }
+    function grow(id, from, to, begin, dur) { // rect grows from x=from towards x=to
+      var x0 = Math.min(from, to), w = Math.abs(to - from);
+      var r = '<rect y="-80" height="400" ';
+      if (still) return '<clipPath id="' + id + '">' + r + 'x="' + x0 + '" width="' + w + '"/></clipPath>';
+      return '<clipPath id="' + id + '">' + r + 'x="' + (from < to ? from : from) + '" width="0">' +
+        anim("width", "0;" + w, begin, dur) + (from > to ? anim("x", from + ";" + to, begin, dur) : "") + "</rect></clipPath>";
+    }
+    function light(id, from, to) {
+      var loop = ' repeatCount="indefinite" calcMode="spline" keyTimes="0;.4;1" keySplines=".42 0 .58 1;0 0 1 1"';
+      return '<linearGradient id="' + id + '" gradientUnits="userSpaceOnUse" x1="' + (from - 45) + '" x2="' + (from + 45) + '" y1="0" y2="0">' +
+        '<stop offset="0" stop-color="#c23a2b" stop-opacity="0"/><stop offset=".5" stop-color="#e0533f"/><stop offset="1" stop-color="#c23a2b" stop-opacity="0"/>' +
+        anim("x1", (from - 45) + ";" + (to - 45) + ";" + (to - 45), 2.6, 6, loop) +
+        anim("x2", (from + 45) + ";" + (to + 45) + ";" + (to + 45), 2.6, 6, loop) +
+        "</linearGradient>";
+    }
     function waves(y, cls) {
       var d = "M-100 " + y;
       for (var x = -100; x < 1300; x += 100) d += " Q" + (x + 50) + " " + (y - 8) + " " + (x + 100) + " " + y;
@@ -40,14 +61,21 @@
       hangers += '<line class="hanger" style="animation-delay:' + delay + 's" x1="' + x + '" y1="' + y.toFixed(1) + '" x2="' + x + '" y2="200"/>';
     }
     var L = "M0 220 Q300 90 600 90", R = "M1200 220 Q900 90 600 90";
+    var fade = still ? "" : '<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.06;.4;.48;1" begin="2.6s" dur="6s" repeatCount="indefinite"/>';
     return (
-      '<svg class="bridge" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">' +
-      '<path class="deck" pathLength="1" d="M0 200 L1200 200"/>' +
+      '<svg class="bridge" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true"><defs>' +
+      grow("clip-deck", 0, 1200, 0.1, 1.1) +
+      grow("clip-l", 0, 602, 0.5, 1.3) +      // 2 units of overlap so the halves always close
+      grow("clip-r", 1200, 598, 0.5, 1.3) +
+      light("light-l", 0, 600) + light("light-r", 1200, 600) +
+      "</defs>" +
+      '<path class="deck" clip-path="url(#clip-deck)" d="M0 200 L1200 200"/>' +
       hangers +
-      '<path class="arc arc-l" pathLength="1" d="' + L + '"/>' +
-      '<path class="arc arc-r" pathLength="1" d="' + R + '"/>' +
-      '<path class="pulse pulse-l" pathLength="1" d="' + L + '"/>' +
-      '<path class="pulse pulse-r" pathLength="1" d="' + R + '"/>' +
+      '<path class="arc" clip-path="url(#clip-l)" d="' + L + '"/>' +
+      '<path class="arc" clip-path="url(#clip-r)" d="' + R + '"/>' +
+      (still ? "" :
+        '<path class="pulse" stroke="url(#light-l)" opacity="0" d="' + L + '">' + fade + "</path>" +
+        '<path class="pulse" stroke="url(#light-r)" opacity="0" d="' + R + '">' + fade + "</path>") +
       '<g class="waves">' + waves(236, "w1") + waves(250, "w2") + "</g>" +
       "</svg>"
     );
