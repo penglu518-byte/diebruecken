@@ -25,21 +25,33 @@
   function each(arr, fn) { return (arr || []).map(fn).join(""); }
 
 
-  var bridgeSvg =
-    '<svg class="bridge" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">' +
-    '<path class="arc" d="M0 220 Q600 -40 1200 220"/>' +
-    '<path class="deck" d="M0 200 L1200 200"/>' +
-    (function () {
-      var s = "";
-      for (var x = 100; x < 1200; x += 100) {
-        var t = x / 1200, y = (1 - t) * (1 - t) * 220 + 2 * (1 - t) * t * -40 + t * t * 220;
-        s += '<line class="hanger" x1="' + x + '" y1="' + y.toFixed(1) + '" x2="' + x + '" y2="200"/>';
-      }
-      return s;
-    })() +
-    '<path class="wave" d="M0 236 Q50 228 100 236 T200 236 T300 236 T400 236 T500 236 T600 236 T700 236 T800 236 T900 236 T1000 236 T1100 236 T1200 236"/>' +
-    '<path class="wave w2" d="M0 250 Q50 242 100 250 T200 250 T300 250 T400 250 T500 250 T600 250 T700 250 T800 250 T900 250 T1000 250 T1100 250 T1200 250"/>' +
-    "</svg>";
+  var bridgeSvg = (function () {
+    // arc: quadratic from (0,220) via (600,-40) to (1200,220); split at the middle into two halves
+    // so each half grows from its own shore and they meet at the keystone (600,90)
+    function waves(y, cls) {
+      var d = "M-100 " + y;
+      for (var x = -100; x < 1300; x += 100) d += " Q" + (x + 50) + " " + (y - 8) + " " + (x + 100) + " " + y;
+      return '<path class="wave ' + cls + '" d="' + d + '"/>';
+    }
+    var hangers = "";
+    for (var x = 100; x < 1200; x += 100) {
+      var t = x / 1200, y = (1 - t) * (1 - t) * 220 + 2 * (1 - t) * t * -40 + t * t * 220;
+      var delay = (1.7 + Math.abs(x - 600) / 600 * 0.6).toFixed(2); // from the middle outwards
+      hangers += '<line class="hanger" style="animation-delay:' + delay + 's" x1="' + x + '" y1="' + y.toFixed(1) + '" x2="' + x + '" y2="200"/>';
+    }
+    var L = "M0 220 Q300 90 600 90", R = "M1200 220 Q900 90 600 90";
+    return (
+      '<svg class="bridge" viewBox="0 0 1200 260" preserveAspectRatio="none" aria-hidden="true">' +
+      '<path class="deck" pathLength="1" d="M0 200 L1200 200"/>' +
+      hangers +
+      '<path class="arc arc-l" pathLength="1" d="' + L + '"/>' +
+      '<path class="arc arc-r" pathLength="1" d="' + R + '"/>' +
+      '<path class="pulse pulse-l" pathLength="1" d="' + L + '"/>' +
+      '<path class="pulse pulse-r" pathLength="1" d="' + R + '"/>' +
+      '<g class="waves">' + waves(236, "w1") + waves(250, "w2") + "</g>" +
+      "</svg>"
+    );
+  })();
 
   // ---------- sections ----------
   function header() {
@@ -65,7 +77,7 @@
     return (
       '<section class="hero" id="top"><div class="wrap hero-in">' +
       '<p class="eyebrow">' + h.eyebrow + "</p>" +
-      '<h1 class="hero-title"><span class="ht-de">' + h.brand + '</span><span class="ht-cn">' + h.brandCn + "</span></h1>" +
+      '<h1 class="hero-title"><span class="ht-de">' + h.brand.replace("Ü", '<span class="uml">U<i class="dot d1"></i><i class="dot d2"></i></span>') + '</span><span class="ht-cn">' + h.brandCn + "</span></h1>" +
       '<p class="hero-sub">' + h.subtitle + "</p>" +
       '<p class="hero-place">' + h.place + "</p>" +
       '<p class="hero-tagline">' + h.tagline + "</p>" +
