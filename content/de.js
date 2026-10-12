@@ -6,8 +6,8 @@ window.CONTENT = window.CONTENT || {};
 window.CONTENT.de = {
   meta: {
     htmlLang: "de",
-    title: "DIE BRÜCKEN / 桥 · Deutsch-Chinesisches Festival für Kultur und Dialog 2027",
-    description: "Sonderprogramm zu 55 Jahren diplomatischer Beziehungen · DIE BRÜCKEN / 桥 · Hamburg 2027",
+    title: "DIE BRÜCKEN – Festival für deutsch-chinesische Kulturresonanz · Hamburg 2027",
+    description: "DIE BRÜCKEN – Festival für deutsch-chinesische Kulturresonanz · Zum 55. Jahrestag der Aufnahme diplomatischer Beziehungen zwischen Deutschland und China · Hamburg · 2027",
   },
 
   ui: {
@@ -27,11 +27,11 @@ window.CONTENT.de = {
   },
 
   hero: {
-    eyebrow: "Sonderprogramm zu 55 Jahren diplomatischer Beziehungen",
+    occasion: "Zum 55. Jahrestag der Aufnahme diplomatischer Beziehungen zwischen Deutschland und China",
     brand: "DIE BRÜCKEN",
     brandCn: "桥",
-    subtitle: "Deutsch-Chinesisches Festival für Kultur und Dialog 2027",
-    place: "Hamburg | 2027",
+    subtitle: "Festival für deutsch-chinesische Kulturresonanz",
+    place: "Hamburg · 2027",
     tagline: "Durch Brücken verbunden, durch Austausch einander verstehen.",
     keyDates: [
       { date: "30.06.2027", label: "Eröffnung · „Wing Chun“" },
@@ -45,7 +45,7 @@ window.CONTENT.de = {
     paragraphs: [
       "2027 jährt sich die Aufnahme diplomatischer Beziehungen zwischen der Volksrepublik China und der Bundesrepublik Deutschland zum 55. Mal.",
       "Hamburg ist eine Stadt, die aus dem Wasser entstanden ist, durch ihren Hafen aufblühte und über Brücken mit der Welt verbunden ist. Elbe und Alster haben nicht nur das Stadtbild geprägt, sondern sind auch Zeugen jahrhundertelanger Handelsbeziehungen, kultureller Begegnungen und des Austauschs zwischen Hamburg und der Welt.",
-      "Seit Langem pflegen Hamburg und China enge Verbindungen in Wirtschaft, Kultur, Bildung und Gesellschaft. Zum 55. Jahrestag startet von Hamburg aus „DIE BRÜCKEN / 桥 – Deutsch-Chinesisches Festival für Kultur und Dialog“.",
+      "Seit Langem pflegen Hamburg und China enge Verbindungen in Wirtschaft, Kultur, Bildung und Gesellschaft. Zum 55. Jahrestag startet von Hamburg aus „DIE BRÜCKEN – Festival für deutsch-chinesische Kulturresonanz“.",
       "Im Mittelpunkt stehen Kultur und Kunst; Austausch und Dialog bilden das verbindende Band. DIE BRÜCKEN bündelt Künstlerinnen und Künstler, Kulturinstitutionen, Bildungseinrichtungen, Unternehmen und gesellschaftliche Akteure aus beiden Ländern und schafft mit Bühnenkunst, Musik, bildender Kunst, Film, traditioneller Kultur und Fachforen eine offene, vielfältige Plattform für den deutsch-chinesischen Kulturaustausch.",
       "DIE BRÜCKEN knüpft an Hamburgs gewachsene Erfahrungen und etablierte Plattformen im deutsch-chinesischen Kulturaustausch an – insbesondere an die Ressourcen und die gesellschaftliche Verankerung, die China Time über viele Jahre aufgebaut hat – und vertieft Inhalte und Formen des Austauschs.",
     ],
@@ -184,6 +184,6 @@ window.CONTENT.de = {
 
   footer: {
     org: "Vorbereitungskomitee DIE BRÜCKEN",
-    line: "Sonderprogramm zu 55 Jahren diplomatischer Beziehungen · Deutsch-Chinesisches Festival für Kultur und Dialog 2027 · Hamburg",
+    line: "DIE BRÜCKEN – Festival für deutsch-chinesische Kulturresonanz · Zum 55. Jahrestag der Aufnahme diplomatischer Beziehungen zwischen Deutschland und China · Hamburg · 2027",
   },
 };

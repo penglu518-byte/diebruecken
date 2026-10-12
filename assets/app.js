@@ -104,9 +104,9 @@
       : "";
     return (
       '<section class="hero" id="top"><div class="wrap hero-in">' +
-      '<p class="eyebrow">' + h.eyebrow + "</p>" +
       '<h1 class="hero-title"><span class="ht-de">' + h.brand.replace("Ü", '<span class="uml">U<i class="dot d1"></i><i class="dot d2"></i></span>') + '</span><span class="ht-cn">' + h.brandCn + "</span></h1>" +
       '<p class="hero-sub">' + h.subtitle + "</p>" +
+      '<p class="hero-occasion">' + h.occasion + "</p>" +
       '<p class="hero-place">' + h.place + "</p>" +
       '<p class="hero-tagline">' + h.tagline + "</p>" +
       countdown +
