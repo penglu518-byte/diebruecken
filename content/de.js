@@ -7,15 +7,15 @@ window.CONTENT.de = {
   meta: {
     htmlLang: "de",
     title: "DIE BRÜCKEN / 桥 · Deutsch-Chinesisches Festival für Kultur und Dialog 2027",
-    description: "55 Jahre diplomatische Beziehungen zwischen China und Deutschland · DIE BRÜCKEN / 桥 · Hamburg 2027",
+    description: "Sonderprogramm zu 55 Jahren diplomatischer Beziehungen · DIE BRÜCKEN / 桥 · Hamburg 2027",
   },
 
   ui: {
     nav: {
       about: "Über uns",
-      pillars: "Programmsäulen",
       highlights: "Höhepunkte",
-      programme: "Programmjahr 2027",
+      areas: "Programm",
+      programme: "Kalender 2027",
       organizers: "Veranstalter",
     },
     langSwitch: "中文",
@@ -26,7 +26,7 @@ window.CONTENT.de = {
   },
 
   hero: {
-    eyebrow: "55 Jahre diplomatische Beziehungen",
+    eyebrow: "Sonderprogramm zu 55 Jahren diplomatischer Beziehungen",
     brand: "DIE BRÜCKEN",
     brandCn: "桥",
     subtitle: "Deutsch-Chinesisches Festival für Kultur und Dialog 2027",
@@ -34,8 +34,8 @@ window.CONTENT.de = {
     tagline: "Durch Brücken verbunden, durch Austausch einander verstehen.",
     keyDates: [
       { date: "30.06.2027", label: "Eröffnung · „Wing Chun“" },
-      { date: "07 / 2027", label: "Festivalabschluss · „Le Cinesi“" },
-      { date: "11.10.2027", label: "Festkonzert 55 Jahre" },
+      { date: "10 / 2027", label: "Oper „Le Cinesi“" },
+      { date: "11.10.2027", label: "Festkonzert 55 Jahre · Abschluss" },
     ],
   },
 
@@ -43,106 +43,116 @@ window.CONTENT.de = {
     title: "Über DIE BRÜCKEN",
     paragraphs: [
       "2027 jährt sich die Aufnahme diplomatischer Beziehungen zwischen der Volksrepublik China und der Bundesrepublik Deutschland zum 55. Mal.",
-      "Hamburg ist eine Stadt, die aus dem Wasser entstanden ist, durch ihren Hafen aufblühte und über Brücken mit der Welt verbunden ist. Seit Langem pflegen Hamburg und China einen intensiven Austausch in Wirtschaft und Handel, Kultur, Bildung und Gesellschaft. Zum 55. Jahrestag startet von Hamburg aus „DIE BRÜCKEN / 桥 – Deutsch-Chinesisches Festival für Kultur und Dialog“.",
-      "DIE BRÜCKEN versteht Kultur als verbindendes Band und stellt Austausch und Dialog in den Mittelpunkt. Das Festival bündelt Kräfte aus Kultur, Kunst, Bildung, Wirtschaft und Gesellschaft beider Länder und schafft mit Aufführungen, bildender Kunst, Film, Esskultur, Traditioneller Chinesischer Medizin und traditioneller Kultur, Foren sowie Jugend- und Unternehmensaustausch neue Räume, in denen man einander kennenlernt, einander sieht und miteinander in Verbindung tritt.",
+      "Hamburg ist eine Stadt, die aus dem Wasser entstanden ist, durch ihren Hafen aufblühte und über Brücken mit der Welt verbunden ist. Elbe und Alster haben nicht nur das Stadtbild geprägt, sondern sind auch Zeugen jahrhundertelanger Handelsbeziehungen, kultureller Begegnungen und des Austauschs zwischen Hamburg und der Welt.",
+      "Seit Langem pflegen Hamburg und China enge Verbindungen in Wirtschaft, Kultur, Bildung und Gesellschaft. Zum 55. Jahrestag startet von Hamburg aus „DIE BRÜCKEN / 桥 – Deutsch-Chinesisches Festival für Kultur und Dialog“.",
+      "Im Mittelpunkt stehen Kultur und Kunst; Austausch und Dialog bilden das verbindende Band. DIE BRÜCKEN bündelt Künstlerinnen und Künstler, Kulturinstitutionen, Bildungseinrichtungen, Unternehmen und gesellschaftliche Akteure aus beiden Ländern und schafft mit Bühnenkunst, Musik, bildender Kunst, Film, traditioneller Kultur und Fachforen eine offene, vielfältige Plattform für den deutsch-chinesischen Kulturaustausch.",
+      "DIE BRÜCKEN knüpft an Hamburgs gewachsene Erfahrungen und etablierte Plattformen im deutsch-chinesischen Kulturaustausch an – insbesondere an die Ressourcen und die gesellschaftliche Verankerung, die China Time über viele Jahre aufgebaut hat – und vertieft Inhalte und Formen des Austauschs.",
     ],
-    quote: "Die „Brücke“ verbindet nicht nur zwei Ufer – sie verbindet Städte mit Städten, Kulturen mit Kulturen und Menschen mit Menschen.",
-    positioning: "DIE BRÜCKEN ist weder ein einzelnes Aufführungsprojekt noch lediglich eine Jubiläumsfeier, sondern eine umfassende deutsch-chinesische Austauschplattform, die Kultur und Kunst in den Mittelpunkt stellt und sich auf Gesellschaft, Bildung, Jugend, Wirtschaft und Städteaustausch erstreckt.",
-    format: [
-      { title: "Ganzjähriges Leitthema", text: "Auftakt Anfang 2027 – ein ganzes Jahr im Zeichen der „Brücke“" },
-      { title: "Höhepunkt im Sommer", text: "Vom 30. Juni bis Mitte Juli: das Kernfestival in Hamburg" },
-      { title: "Abschluss am 11. Oktober", text: "Festkonzert zum 55. Jahrestag der diplomatischen Beziehungen" },
-    ],
-  },
-
-  pillars: {
-    title: "Programmsäulen",
-    items: [
-      {
-        no: "01",
-        name: "Brücken der Kultur",
-        sub: "文化之桥",
-        desc: "Der publikumsorientierte Kern des Festivals: In vielfältigen kulturellen Formen werden das traditionelle und das zeitgenössische China präsentiert und Austausch sowie gemeinsames Schaffen zwischen deutscher und chinesischer Kultur gefördert.",
-        areas: [
-          { name: "Darstellende Kunst", desc: "Musik, Tanz, Theater, Oper und spartenübergreifende Kunst – mit dem Tanzdrama „Wing Chun“ (咏春) aus Shenzhen, deutsch-chinesischen Musikkooperationen und einer deutsch-chinesischen Opernkoproduktion." },
-          { name: "Bildende und visuelle Kunst", desc: "Eine deutsch-chinesische Ausstellung zeitgenössischer Kunst in Malerei, Fotografie, Design, Installation, Video und neuen Medien sowie Projekte visueller Kunst im Hamburger Stadtraum rund um das Thema „Brücke“." },
-          { name: "Film und Bewegtbild", desc: "Eine Reihe chinesischer Filme und deutsch-chinesische Filmgespräche – mit klassischen und zeitgenössischen Spielfilmen, Dokumentarfilmen und Arbeiten junger Filmschaffender." },
-          { name: "Chinesische Esskultur", desc: "Regionale Küchen Chinas, kulinarische Erlebnisse, Teekultur und deutsch-chinesischer gastronomischer Austausch – chinesische Kultur unmittelbar über den Alltag erfahren." },
-          { name: "TCM und traditionelle Gesundheitskultur", desc: "Vorträge, kulturelle Präsentationen und Erlebnisangebote zur Geschichte der Traditionellen Chinesischen Medizin und dem darin enthaltenen chinesischen Kulturdenken." },
-          { name: "Immaterielles Kulturerbe", desc: "Kalligrafie, traditionelles Kunsthandwerk, Kleidung und Teezeremonie machen chinesische Tradition – besonders für junge Menschen – unmittelbar erlebbar." },
-        ],
-      },
-      {
-        no: "02",
-        name: "Brücken des Dialogs",
-        sub: "对话之桥",
-        desc: "In der Reihe „BRÜCKEN DIALOGE / 桥之对话“ kommen führende Persönlichkeiten aus beiden Ländern über Kultur, Kunst, Stadt, Bildung, Jugend, Gesellschaft und Zukunft ins Gespräch – fachlich fundiert, thematisch zugespitzt, als echter Dialog in beide Richtungen und eng verknüpft mit Aufführungen, Filmen und Ausstellungen.",
-      },
-      {
-        no: "03",
-        name: "Brücken der Wirtschaft",
-        sub: "合作之桥",
-        desc: "Anknüpfend an Hamburgs Schlüsselrolle in den deutsch-chinesischen Wirtschaftsbeziehungen bringen Unternehmerdialoge, Unternehmensaustausch und Formate an der Schnittstelle von Kultur und Wirtschaft Unternehmen, Verbände und Institutionen beider Länder zusammen.",
-      },
-      {
-        no: "04",
-        name: "Brücken der Zukunft",
-        sub: "未来之桥",
-        desc: "Für die nächste Generation schaffen Hochschulkooperationen, der Austausch junger Künstlerinnen und Künstler, Meisterkurse, Workshops, Jugendforen, Schülerprojekte und Jugendfilmprojekte Gelegenheiten zu direktem Austausch und gemeinsamem Lernen – die „Brücke“ verbindet mit der Zukunft.",
-      },
-    ],
+    quote: "Das Wasser lässt Städte einander begegnen;\ndie Brücke lässt Kulturen zueinander finden.",
+    positioning: "Die „Brücke“ verbindet nicht nur zwei Ufer – sie verbindet Städte mit Städten, Kulturen mit Kulturen und Menschen mit Menschen. Mit 2027 als erster Ausgabe soll DIE BRÜCKEN von einer Kulturveranstaltung mit Gedenkcharakter zu einer Marke des deutsch-chinesischen Kulturaustauschs mit nachhaltiger Lebenskraft und internationaler Ausstrahlung wachsen.",
   },
 
   highlights: {
     title: "Drei künstlerische Höhepunkte 2027",
-    intro: "Vom Sehen Chinas über das gegenseitige Verstehen hin zum gemeinsamen Schaffen.",
+    intro: "Vom Hamburger Sommer bis zum Jahrestag im Herbst.",
     items: [
       {
-        tag: "30. Juni / OPENING",
-        title: "„Wing Chun“ (咏春)",
-        lead: "Die „Brücke“ öffnet sich mit zeitgenössischem chinesischem Kulturausdruck.",
+        tag: "Ab 30. Juni / OPENING",
+        title: "Tanzdrama „Wing Chun“ (咏春)",
+        lead: "Mehr! Theater Hamburg · rund 10 Vorstellungen",
         body: [
-          "Das erste Kernfestival von DIE BRÜCKEN wird mit dem Tanzdrama „Wing Chun“ aus Shenzhen eröffnet – Bühnenkunst mit ausgeprägt chinesischem Profil und zeitgenössischer Ausdruckskraft.",
-          "Mit der Eröffnungsfeier und Begegnungen deutscher und chinesischer Gäste beginnt die rund zweiwöchige kulturelle Kernphase.",
+          "Das Tanzdrama „Wing Chun“ aus Shenzhen eröffnet die erste Ausgabe von DIE BRÜCKEN. Das Werk verbindet traditionelle chinesische Kampfkunst, moderne Bühnenkunst und zeitgenössische Ästhetik und bringt den Geist der chinesischen Kultur in einer international verständlichen Bühnensprache zum Ausdruck.",
+          "Mit einer hochwertigen Produktion und einer Vorstellungsreihe für ein breites Publikum wird die Eröffnung zu einem städtischen Kulturereignis mit großer öffentlicher Wirkung.",
         ],
       },
       {
-        tag: "Mitte Juli / FESTIVAL FINALE",
+        tag: "Anfang Oktober / OPER",
         title: "„Le Cinesi“ (Die Chinesinnen)",
-        lead: "Künstlerischer Abschluss des Kernfestivals in deutsch-chinesischer Koproduktion.",
+        lead: "HfMT Forum · Deutsch-chinesische Koproduktion",
         body: [
-          "Christoph Willibald Glucks Oper „Le Cinesi“ entstand im 18. Jahrhundert im europäischen Kulturkontext und hat „China“ zum Sujet – ein einzigartiger Text, um neu darüber nachzudenken, wie Europa und China einander betrachten und verstehen.",
-          "In einer zeitgenössischen Interpretation deutscher und chinesischer Künstlerinnen und Künstler trifft die historische europäische Vorstellung von China auf den heutigen, direkten Kulturaustausch.",
+          "Ausgehend von Christoph Willibald Glucks Oper „Le Cinesi“ entsteht eine deutsch-chinesische Koproduktion in zeitgenössischer Neuinterpretation. Das im 18. Jahrhundert in Europa entstandene Werk mit China als Sujet bietet einen einzigartigen Text, um neu darüber nachzudenken, wie Europa und China einander betrachten und verstehen.",
+          "Mehr als die Neuproduktion einer Oper: eine künstlerische Praxis, in der sich deutsche und chinesische Künstlerinnen und Künstler mit Geschichte, Kultur und interkulturellem Verstehen auseinandersetzen.",
         ],
       },
       {
         tag: "11. Oktober / GRAND FINALE",
-        title: "Sinfonisches Festkonzert zum 55. Jahrestag",
-        lead: "Renommierte Dirigenten, Solisten und Musiker aus beiden Ländern auf einer Bühne.",
+        title: "Festkonzert zum 55. Jahrestag",
+        lead: "Elbphilharmonie Hamburg · Feierlicher Festivalabschluss",
         body: [
-          "Am 11. Oktober jährt sich die Aufnahme diplomatischer Beziehungen zum 55. Mal. Das Festkonzert vereint repräsentative Werke beider Länder und lässt die Musikkulturen Chinas und Deutschlands in Dialog treten.",
-          "Gäste aus Politik, Kultur, Wirtschaft, Bildung und Gesellschaft beider Länder begehen in Hamburg gemeinsam diesen besonderen Jahrestag.",
+          "Festkonzert mit chinesischer Volksmusik und Sinfonik: International renommierte Dirigenten, Solisten und Musiker aus beiden Ländern gestalten gemeinsam mit einem Sinfonieorchester ein Programm, in dem traditionelle Instrumente wie die Erhu und die Kunqu-Oper auf die Tradition der deutschen Sinfonik treffen.",
+          "Klassische Werke aus China und Deutschland stehen neben zeitgenössischen, genreübergreifenden Kompositionen. Gäste aus Politik, Diplomatie, Kultur, Wirtschaft und Gesellschaft beider Länder würdigen mit der Musik – einer Kunst jenseits von Sprache und Grenzen – den 55. Jahrestag.",
+        ],
+      },
+    ],
+  },
+
+  areas: {
+    title: "Programm",
+    items: [
+      {
+        no: "01",
+        name: "Bühnenkunst und Musik",
+        sub: "舞台艺术与音乐",
+        items: [
+          { title: "Tanzdrama „Wing Chun“", meta: "ab 30. Juni · Mehr! Theater", desc: "Eröffnungsproduktion und Vorstellungsreihe des Tanzdramas aus Shenzhen." },
+          { title: "Traditionelles Theater aus Sichuan und Bian Lian", meta: "Juli · Laeiszhalle Kleiner Saal", desc: "Der berühmte Gesichtswechsel der Sichuan-Oper und weitere traditionelle Darstellungskünste der Region." },
+          { title: "Gastspiel der Nationalen Akademie für Chinesische Theaterkunst", meta: "Juli · Hamburg", desc: "Klassische Stücke, traditionelle Gesangspassagen und künstlerischer Austausch – Tradition und Gegenwart des chinesischen Theaters." },
+          { title: "Kunqu-Oper und Sinfonik im Dialog", meta: "Laeiszhalle", desc: "Deutsche und chinesische Musiker erkunden die Resonanzen zwischen Kunqu-Oper und westlicher Sinfonik." },
+          { title: "Oper „Le Cinesi“ (Die Chinesinnen)", meta: "Anfang Oktober · HfMT Forum", desc: "Deutsch-chinesische Koproduktion und Neuinterpretation von Glucks Oper." },
+          { title: "Festkonzert mit chinesischer Volksmusik und Sinfonik", meta: "11. Oktober · Elbphilharmonie", desc: "Festkonzert zum 55. Jahrestag und feierlicher Abschluss von DIE BRÜCKEN." },
+        ],
+      },
+      {
+        no: "02",
+        name: "Bildende Kunst, Design und Film",
+        sub: "视觉艺术、设计与电影",
+        items: [
+          { title: "Preisträger des KI-Kreativwettbewerbs „Waka-Preis“ (瓦卡奖)", meta: "", desc: "Neue Beziehungen zwischen künstlicher Intelligenz, bildender Kunst, Designinnovation und kulturellem Ausdruck." },
+          { title: "Ingo Hoffmanns – Retrospektive", meta: "", desc: "Repräsentative Werke, Designdokumente und Werdegang – ein Lebenswerk in Grafikdesign und visueller Kunst." },
+          { title: "DIE BRÜCKEN – Projekt der visuellen Künste", meta: "", desc: "Unter den Leitbegriffen „Wasser, Stadt, Verbindung, Miteinander“: Fotografie, Grafikdesign, zeitgenössische Kunst und visuelle Gestaltung im Hamburger Stadtraum." },
+          { title: "Chinese Film Festival Hamburg (汉堡华语电影节)", meta: "", desc: "Filmvorführungen, Gespräche mit Filmschaffenden und thematische Veranstaltungen zur Vielfalt des chinesischsprachigen Films." },
+        ],
+      },
+      {
+        no: "03",
+        name: "BRÜCKEN DIALOGE · Fachforen",
+        sub: "桥之对话",
+        desc: "Kultur fördert Verständnis, Dialog schafft Zusammenarbeit. Die drei Foren werden mit Ausstellungen, kulturellen Erlebnisangeboten und Unternehmensaustausch verbunden – Fachdialog und öffentliche Teilhabe ergänzen einander.",
+        items: [
+          { title: "Forum für TCM-Kultur und Gesundheit", meta: "", desc: "Fachdialog zur Kultur der Traditionellen Chinesischen Medizin, zu traditionellen Gesundheitsvorstellungen und zum medizinischen Austausch – mit Präsentationen und Angeboten für das Publikum." },
+          { title: "Forum für Esskultur und Branchenkooperation", meta: "", desc: "Gastronomische Innovation, gesunde Ernährung und Lebensästhetik – mit Teekultur zum Erleben und Unternehmensaustausch." },
+          { title: "Forum für neue Energien und nachhaltige Entwicklung", meta: "", desc: "Neue Energietechnologien, grüne Transformation und deutsch-chinesische Unternehmenskooperation." },
+        ],
+      },
+      {
+        no: "04",
+        name: "Brücken der Zukunft · Jugend und Bildung",
+        sub: "未来之桥",
+        desc: "Der Jugendaustausch ist der in die Zukunft gerichtete Kern von DIE BRÜCKEN. Gemeinsam mit den Ressourcen des Deutschen Akademischen Austauschdienstes (DAAD) wird der Austausch zwischen Hochschulen, Kunsthochschulen und jungen Talenten beider Länder gefördert.",
+        items: [
+          { title: "Jugend-, Kunst- und Bildungsaustausch", meta: "", desc: "Austausch junger Künstlerinnen und Künstler, Meisterkurse, wissenschaftliche Besuche, kreative Workshops und gemeinsame Projekte." },
         ],
       },
     ],
   },
 
   programme: {
-    title: "Programmjahr 2027",
+    title: "Kalender 2027",
     items: [
-      { start: "2027-01-26", end: "2027-02-10", when: "Ende Januar – Anfang Februar", title: "Auftakt des Festivaljahres", desc: "DIE BRÜCKEN 2027 wird öffentlich vorgestellt; die Schwerpunktprojekte werden schrittweise bekanntgegeben." },
-      { start: "2027-06-30", end: "2027-06-30", when: "30. Juni", title: "Festivaleröffnung", desc: "Eröffnungsfeier und Eröffnungsproduktion „Wing Chun“.", milestone: true },
-      { start: "2027-06-30", end: "2027-07-16", when: "30. Juni – Mitte Juli", title: "DIE BRÜCKEN FESTIVAL", desc: "Bühnenkunst, Musik, bildende Kunst, Film, Esskultur, TCM, Dialogforen, Wirtschafts- und Jugendformate in Hamburg." },
-      { start: "2027-07-14", end: "2027-07-16", when: "Mitte Juli", title: "Festivalabschluss", desc: "Glucks Oper „Le Cinesi“ (Die Chinesinnen).", milestone: true },
-      { start: "2027-07-17", end: "2027-10-10", when: "Juli – September", title: "BRÜCKEN geht weiter", desc: "Ausstellungen sowie Jugend-, Bildungs-, Kunst- und Fachaustauschprojekte laufen weiter." },
-      { start: "2027-10-11", end: "2027-10-11", when: "11. Oktober", title: "Festkonzert 55 Jahre", desc: "Sinfonisches Festkonzert zum 55. Jahrestag – Abschluss der ersten Ausgabe von DIE BRÜCKEN.", milestone: true },
+      { start: "2027-01-01", end: "2027-02-28", when: "Anfang 2027", title: "Offizieller Auftakt", desc: "DIE BRÜCKEN 2027 wird öffentlich vorgestellt." },
+      { start: "2027-03-01", end: "2027-06-29", when: "März – Juni", title: "Programmbekanntgabe", desc: "Schrittweise Bekanntgabe des Programms; Start des Ticketverkaufs." },
+      { start: "2027-06-30", end: "2027-06-30", when: "30. Juni", title: "Eröffnung · „Wing Chun“", desc: "Mehr! Theater Hamburg", milestone: true },
+      { start: "2027-07-01", end: "2027-07-31", when: "Juli", title: "Bühne und traditionelles Theater", desc: "Zentrale Bühnenproduktionen, traditionelles Theater, bildende Kunst und Kulturveranstaltungen." },
+      { start: "2027-08-01", end: "2027-09-30", when: "August – September", title: "Ausstellungen, Film und Foren", desc: "Ausstellungen, Film, Fachforen sowie Jugend- und Bildungsaustausch." },
+      { start: "2027-10-01", end: "2027-10-10", when: "Anfang Oktober", title: "Oper „Le Cinesi“", desc: "HfMT Forum", milestone: true },
+      { start: "2027-10-11", end: "2027-10-11", when: "11. Oktober", title: "Festkonzert 55 Jahre · Abschluss", desc: "Elbphilharmonie Hamburg", milestone: true },
     ],
   },
 
   vision: {
     title: "Vision",
-    text: "Der 55. Jahrestag ist der Anlass für DIE BRÜCKEN – nicht das Ende. Von Hamburg aus soll mit der ersten Ausgabe 2027 eine nachhaltige, offene und international wirksame Marke für den deutsch-chinesischen Kultur- und Dialogaustausch wachsen.",
-    lines: ["2027 ist die erste Brücke.", "Von Hamburg aus – China und Deutschland verbinden;", "Kultur und Stadt verbinden, Gegenwart und Zukunft verbinden."],
+    text: "Mit der ersten Ausgabe möchten wir Hamburg nicht nur zu einer Bühne der Begegnung deutscher und chinesischer Kunst machen, sondern auch zu einem Raum für Gedankenaustausch, gesellschaftlichen Dialog und internationale Zusammenarbeit. Von einer Aufführung zu einem Gespräch, von einem Kunstwerk zu einer langfristigen Zusammenarbeit: Der Wert der Kultur liegt nicht nur darin, Unterschiede zu zeigen, sondern eine gemeinsame Sprache zu finden.",
+    lines: ["2027 ist die erste Brücke.", "Von Hamburg aus – China und Deutschland verbinden;", "von der Kultur aus – die Welt und die Zukunft verbinden."],
   },
 
   organizers: {
@@ -155,6 +165,6 @@ window.CONTENT.de = {
 
   footer: {
     org: "Vorbereitungskomitee DIE BRÜCKEN",
-    line: "55 Jahre diplomatische Beziehungen · Deutsch-Chinesisches Festival für Kultur und Dialog 2027 · Hamburg",
+    line: "Sonderprogramm zu 55 Jahren diplomatischer Beziehungen · Deutsch-Chinesisches Festival für Kultur und Dialog 2027 · Hamburg",
   },
 };

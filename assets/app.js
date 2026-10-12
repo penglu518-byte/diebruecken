@@ -84,7 +84,7 @@
   // ---------- sections ----------
   function header() {
     var n = C.ui.nav;
-    var links = ["about", "pillars", "highlights", "programme", "organizers"];
+    var links = ["about", "highlights", "areas", "programme", "organizers"];
     return (
       '<header class="topbar"><div class="wrap topbar-in">' +
       '<a class="logo" href="#top"><span class="logo-de">DIE BRÜCKEN</span><span class="logo-sep">/</span><span class="logo-cn">桥</span></a>' +
@@ -123,27 +123,26 @@
       '<section class="section" id="about"><div class="wrap">' +
       sectionHead(A.title) +
       '<div class="about-grid"><div class="prose">' + each(A.paragraphs, function (x) { return "<p>" + x + "</p>"; }) + "</div>" +
-      '<blockquote class="quote">' + A.quote + "</blockquote></div>" +
+      '<blockquote class="quote">' + A.quote.replace(/\n/g, "<br>") + "</blockquote></div>" +
       '<p class="lead-text">' + A.positioning + "</p>" +
-      '<div class="format">' + each(A.format, function (x, i) {
-        return '<div class="format-step"><span>0' + (i + 1) + "</span>" + x.title + "<small>" + x.text + "</small></div>";
-      }) + "</div>" +
       "</div></section>"
     );
   }
 
-  function pillars() {
-    var P = C.pillars;
+  function areas() {
+    var P = C.areas;
     return (
-      '<section class="section alt" id="pillars"><div class="wrap">' + sectionHead(P.title) +
-      '<div class="pillars">' +
+      '<section class="section alt" id="areas"><div class="wrap">' + sectionHead(P.title) +
+      '<div class="areas-list">' +
       each(P.items, function (it) {
         return (
-          '<article class="pillar' + (it.areas ? " pillar-wide" : "") + '">' +
+          '<article class="area-block">' +
           '<div class="pillar-head"><span class="pillar-no">' + it.no + "</span><div><h3>" + it.name + '</h3><p class="pillar-sub">' + it.sub + "</p></div></div>" +
-          "<p>" + it.desc + "</p>" +
-          (it.areas ? '<div class="areas">' + each(it.areas, function (a) { return '<div class="area"><h4>' + a.name + "</h4><p>" + a.desc + "</p></div>"; }) + "</div>" : "") +
-          "</article>"
+          (it.desc ? '<p class="area-desc">' + it.desc + "</p>" : "") +
+          '<ul class="events">' + each(it.items, function (e) {
+            return '<li class="event"><div class="event-main"><h4>' + e.title + "</h4><p>" + e.desc + "</p></div>" +
+              (e.meta ? '<span class="event-meta">' + e.meta + "</span>" : "") + "</li>";
+          }) + "</ul></article>"
         );
       }) +
       "</div></div></section>"
@@ -233,7 +232,7 @@
   if (md) md.setAttribute("content", C.meta.description);
 
   document.getElementById("app").innerHTML =
-    header() + "<main>" + hero() + about() + pillars() + highlights() + programme() + vision() + organizers() + "</main>" + footer();
+    header() + "<main>" + hero() + about() + highlights() + areas() + programme() + vision() + organizers() + "</main>" + footer();
 
   document.getElementById("nav").addEventListener("click", function (e) {
     if (e.target.tagName === "A") document.body.classList.remove("nav-open");
