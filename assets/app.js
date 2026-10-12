@@ -84,7 +84,7 @@
   // ---------- sections ----------
   function header() {
     var n = C.ui.nav;
-    var links = ["about", "highlights", "areas", "programme", "organizers"];
+    var links = ["about", "highlights", "areas", "programme", "support", "organizers"];
     return (
       '<header class="topbar"><div class="wrap topbar-in">' +
       '<a class="logo" href="#top"><span class="logo-de">DIE BRÜCKEN</span><span class="logo-sep">/</span><span class="logo-cn">桥</span></a>' +
@@ -187,10 +187,23 @@
     );
   }
 
+  function support() {
+    var S = C.support;
+    return (
+      '<section class="section alt" id="support"><div class="wrap">' + sectionHead(S.title, S.intro) +
+      '<h3 class="sub-head">' + S.fieldsTitle + "</h3>" +
+      '<div class="fields">' + each(S.fields, function (f, i) {
+        return '<div class="field"><span class="field-no">' + (i + 1) + "</span><h4>" + f.title + "</h4><p>" + f.desc + "</p></div>";
+      }) + "</div>" +
+      '<div class="model"><h3 class="sub-head">' + S.modelTitle + "</h3><p>" + S.model + "</p></div>" +
+      "</div></section>"
+    );
+  }
+
   function vision() {
     var V = C.vision;
     return (
-      '<section class="section vision alt"><div class="wrap narrow">' +
+      '<section class="section vision"><div class="wrap narrow">' +
       '<p class="eyebrow">' + V.title + "</p>" +
       '<p class="vision-text">' + V.text + "</p>" +
       '<div class="vision-lines">' + each(V.lines, function (x) { return "<p>" + x + "</p>"; }) + "</div>" +
@@ -201,7 +214,7 @@
   function organizers() {
     var O = C.organizers;
     return (
-      '<section class="section" id="organizers"><div class="wrap">' + sectionHead(O.title) +
+      '<section class="section alt" id="organizers"><div class="wrap">' + sectionHead(O.title) +
       '<div class="orgs">' +
       each(O.groups, function (g) {
         return '<div class="org"><p class="org-label">' + g.label + "</p>" + each(g.names, function (n) { return '<p class="org-name">' + n + "</p>"; }) + "</div>";
@@ -232,7 +245,7 @@
   if (md) md.setAttribute("content", C.meta.description);
 
   document.getElementById("app").innerHTML =
-    header() + "<main>" + hero() + about() + highlights() + areas() + programme() + vision() + organizers() + "</main>" + footer();
+    header() + "<main>" + hero() + about() + highlights() + areas() + programme() + support() + vision() + organizers() + "</main>" + footer();
 
   document.getElementById("nav").addEventListener("click", function (e) {
     if (e.target.tagName === "A") document.body.classList.remove("nav-open");

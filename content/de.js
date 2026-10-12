@@ -15,7 +15,8 @@ window.CONTENT.de = {
       about: "Über uns",
       highlights: "Höhepunkte",
       areas: "Programm",
-      programme: "Kalender 2027",
+      programme: "Zeitplan",
+      support: "Kooperation",
       organizers: "Veranstalter",
     },
     langSwitch: "中文",
@@ -79,7 +80,8 @@ window.CONTENT.de = {
         title: "Festkonzert zum 55. Jahrestag",
         lead: "Elbphilharmonie Hamburg · Feierlicher Festivalabschluss",
         body: [
-          "Festkonzert mit chinesischer Volksmusik und Sinfonik: International renommierte Dirigenten, Solisten und Musiker aus beiden Ländern gestalten gemeinsam mit einem Sinfonieorchester ein Programm, in dem traditionelle Instrumente wie die Erhu und die Kunqu-Oper auf die Tradition der deutschen Sinfonik treffen.",
+          "Festkonzert mit chinesischer Volksmusik und Sinfonik: International renommierte Dirigenten, Solisten und Musiker aus beiden Ländern gestalten gemeinsam mit einem Sinfonieorchester ein Programm, in dem chinesische Volksmusik auf die Tradition der deutschen Sinfonik trifft.",
+          "Angefragt: die Erhu-Virtuosin Yu Hongmei (于红梅), der Kunqu-Meister Zhang Jun (张军) und die Sängerin Tan Weiwei (谭维维) sowie deutsche und chinesische Orchesterkünstler.",
           "Klassische Werke aus China und Deutschland stehen neben zeitgenössischen, genreübergreifenden Kompositionen. Gäste aus Politik, Diplomatie, Kultur, Wirtschaft und Gesellschaft beider Länder würdigen mit der Musik – einer Kunst jenseits von Sprache und Grenzen – den 55. Jahrestag.",
         ],
       },
@@ -95,11 +97,11 @@ window.CONTENT.de = {
         sub: "舞台艺术与音乐",
         items: [
           { title: "Tanzdrama „Wing Chun“", meta: "ab 30. Juni · Mehr! Theater", desc: "Eröffnungsproduktion und Vorstellungsreihe des Tanzdramas aus Shenzhen." },
-          { title: "Traditionelles Theater aus Sichuan und Bian Lian", meta: "Juli · Laeiszhalle Kleiner Saal", desc: "Der berühmte Gesichtswechsel der Sichuan-Oper und weitere traditionelle Darstellungskünste der Region." },
+          { title: "Traditionelles Theater aus Sichuan und Bian Lian", meta: "Juli · Laeiszhalle Kleiner Saal", desc: "Ensembles aus dem Umfeld des Sichuan-Verbands der zurückgekehrten Auslandschinesen (四川侨联) zeigen den Gesichtswechsel der Sichuan-Oper und weitere traditionelle Darstellungskünste der Region." },
           { title: "Gastspiel der Nationalen Akademie für Chinesische Theaterkunst", meta: "Juli · Hamburg", desc: "Klassische Stücke, traditionelle Gesangspassagen und künstlerischer Austausch – Tradition und Gegenwart des chinesischen Theaters." },
           { title: "Kunqu-Oper und Sinfonik im Dialog", meta: "Laeiszhalle", desc: "Deutsche und chinesische Musiker erkunden die Resonanzen zwischen Kunqu-Oper und westlicher Sinfonik." },
           { title: "Oper „Le Cinesi“ (Die Chinesinnen)", meta: "Anfang Oktober · HfMT Forum", desc: "Deutsch-chinesische Koproduktion und Neuinterpretation von Glucks Oper." },
-          { title: "Festkonzert mit chinesischer Volksmusik und Sinfonik", meta: "11. Oktober · Elbphilharmonie", desc: "Festkonzert zum 55. Jahrestag und feierlicher Abschluss von DIE BRÜCKEN." },
+          { title: "Festkonzert mit chinesischer Volksmusik und Sinfonik", meta: "11. Oktober · Elbphilharmonie", desc: "Festkonzert zum 55. Jahrestag und feierlicher Abschluss von DIE BRÜCKEN. Angefragt: Yu Hongmei (Erhu), Zhang Jun (Kunqu), Tan Weiwei (Gesang)." },
         ],
       },
       {
@@ -137,16 +139,33 @@ window.CONTENT.de = {
   },
 
   programme: {
-    title: "Kalender 2027",
+    title: "Zeitplan 2026–2027",
     items: [
-      { start: "2027-01-01", end: "2027-02-28", when: "Anfang 2027", title: "Offizieller Auftakt", desc: "DIE BRÜCKEN 2027 wird öffentlich vorgestellt." },
-      { start: "2027-03-01", end: "2027-06-29", when: "März – Juni", title: "Programmbekanntgabe", desc: "Schrittweise Bekanntgabe des Programms; Start des Ticketverkaufs." },
+      { start: "2026-11-01", end: "2026-11-30", when: "November 2026", title: "Start der Vorbereitung", desc: "Vorantreiben der wichtigsten künstlerischen Projekte und Partnerschaften." },
+      { start: "2026-12-01", end: "2027-02-28", when: "Dez. 2026 – Feb. 2027", title: "Abstimmung und offizielle Bekanntgabe", desc: "Abstimmung von Spielstätten, Künstlerensembles und Partnern; offizielle öffentliche Bekanntgabe des Projekts." },
+      { start: "2027-03-01", end: "2027-06-29", when: "März – Juni 2027", title: "Programm und Kommunikation", desc: "Schrittweise Bekanntgabe des Programms; Kommunikation, Ticketing und Sponsoringkooperationen." },
       { start: "2027-06-30", end: "2027-06-30", when: "30. Juni", title: "Eröffnung · „Wing Chun“", desc: "Mehr! Theater Hamburg", milestone: true },
       { start: "2027-07-01", end: "2027-07-31", when: "Juli", title: "Bühne und traditionelles Theater", desc: "Zentrale Bühnenproduktionen, traditionelles Theater, bildende Kunst und Kulturveranstaltungen." },
       { start: "2027-08-01", end: "2027-09-30", when: "August – September", title: "Ausstellungen, Film und Foren", desc: "Ausstellungen, Film, Fachforen sowie Jugend- und Bildungsaustausch." },
       { start: "2027-10-01", end: "2027-10-10", when: "Anfang Oktober", title: "Oper „Le Cinesi“", desc: "HfMT Forum", milestone: true },
       { start: "2027-10-11", end: "2027-10-11", when: "11. Oktober", title: "Festkonzert 55 Jahre · Abschluss", desc: "Elbphilharmonie Hamburg", milestone: true },
     ],
+  },
+
+  support: {
+    title: "Kooperation und Unterstützung",
+    intro: "Angestrebt wird die Unterstützung der zuständigen Stellen der Freien und Hansestadt Hamburg, deutscher Kulturinstitutionen, Kunsthochschulen, Stiftungen sowie deutscher und chinesischer Unternehmen – ein offenes, vielfältiges Kooperationsmodell aus öffentlichen Kulturressourcen, gesellschaftlichen Kräften und fachlichen Institutionen.",
+    fieldsTitle: "Bereiche, in denen Unterstützung gesucht wird",
+    fields: [
+      { title: "Offizielle Veranstaltungen und Empfänge", desc: "Koordination des Eröffnungsempfangs, des Abschlussempfangs und der Betreuung hochrangiger Gäste; Unterstützung durch öffentliche Institutionen bei Veranstaltungsorten, Protokoll und Gästekoordination." },
+      { title: "Spielstätten und Ausstellungsräume", desc: "Unterstützung durch Hamburgs große Kulturhäuser, Kunsthochschulen und öffentliche Kulturräume bei Raumkoordination, Mietkonditionen, Raumsponsoring und technischer Ausstattung – insbesondere Elbphilharmonie, Laeiszhalle, Mehr! Theater, HfMT Forum sowie Orte für Ausstellungen, Film und Foren." },
+      { title: "Stadtmarketing und Medienarbeit", desc: "Unterstützung durch zuständige Hamburger Stellen und städtische Kulturplattformen bei Pressearbeit, Veranstaltungskalendern der Stadt, öffentlichen Kommunikationskanälen, Medienkooperationen und internationaler Kommunikation." },
+      { title: "Kulturstiftungen und Projektförderung", desc: "Förderung durch Stiftungen, öffentliche Kulturförderprogramme und gemeinnützige Einrichtungen – insbesondere für Koproduktionen, Ausstellungen, Jugend- und Bildungsprojekte sowie interkulturellen Austausch." },
+      { title: "Unternehmen und gesellschaftliche Partner", desc: "Deutsche und chinesische Unternehmen, Wirtschaftsverbände und gesellschaftliche Organisationen beteiligen sich über Kultursponsoring, projektbezogene Kooperationen, Sachleistungen oder Gastgeberleistungen." },
+      { title: "Kunsthochschulen und Bildungspartner", desc: "Unterstützung durch Kunsthochschulen und Kulturinstitutionen in Hamburg und Deutschland sowie durch Austauschorganisationen wie den DAAD – bei akademischen Ressourcen, Künstleraustausch, Nachwuchsförderung und gemeinsamen Projekten." },
+    ],
+    modelTitle: "Kooperations- und Umsetzungsmodell",
+    model: "Die einzelnen künstlerischen Projekte können je nach Charakter von den jeweiligen Kulturinstitutionen, Produktionsfirmen oder Partnern produziert und betrieben werden und sind in die gemeinsame Marken- und Kommunikationsstruktur von DIE BRÜCKEN eingebunden. Einheitliche Positionierung, gemeinsames Erscheinungsbild, gebündelte Kommunikation und koordinierte Zusammenarbeit schaffen eine starke Gesamtmarke und nutzen zugleich die Stärken aller Partner.",
   },
 
   vision: {
